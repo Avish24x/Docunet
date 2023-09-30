@@ -5,7 +5,9 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 
-import "react-loading-skeleton/dist/skeleton.css"
+import "react-loading-skeleton/dist/skeleton.css";
+import "simplebar-react/dist/simplebar.min.css";
+
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light bg-slate-100">
+    <html lang="en" className="light bg-gray-200 opacity-110">
       <Providers>
         <body
           className={cn(
@@ -29,7 +31,7 @@ export default function RootLayout({
             inter.className
           )}
         >
-          <Toaster/>
+          <Toaster />
           <Navbar />
           {children}
         </body>
