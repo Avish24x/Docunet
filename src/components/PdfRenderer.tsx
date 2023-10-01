@@ -2,8 +2,6 @@
 import {
   ChevronDown,
   ChevronUp,
-  Divide,
-  Loader,
   Loader2,
   RotateCw,
   Search,
@@ -79,8 +77,9 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
       <div className="h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2">
         <div className="flex items-center gap-1.5">
           <Button
+          disabled={currPage <= 1}
             onClick={() => {
-              setCurrPage((prev) => (prev - 1 > 1 ? prev - 1 : 1));
+              setCurrPage((prev) => prev - 1 > 1 ? prev - 1 : 1);
               setValue("page", String(currPage - 1));
             }}
             aria-label="previous page"
